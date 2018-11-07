@@ -1,2 +1,25 @@
 # Simple Santa
-Simple Santa: A webapp to make your secret santa names more... secret, and with less work on your part!
+
+[Simple Santa](http://www.simple-santa.com): A webapp to make your secret santa names more... secret, and with less work on your part!
+![santa hat](https://raw.githubusercontent.com/wizmariefa/simple-santa/master/images/santahat_no_dec.gif)
+
+## Getting Started
+
+Clone the repository and start your own branch:
+`git clone https://github.com/wizmariefa/simple-santa`
+`git checkout -b my-dev-branch`
+`cd simple-santa`
+
+Install virtualenv and create a venv for development:
+`pip3 install virtualenv`
+Then,
+Create the venv: `virtualenv -p python3 .` then,
+Activate/start the venv: `source bin/activate`.
+
+Deactivate when you're done, using just `deactivate`.
+
+## Built With
+
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
