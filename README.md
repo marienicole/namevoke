@@ -16,6 +16,8 @@ Then,
 Create the venv: `virtualenv -p python3 .` then,
 Activate/start the venv: `source bin/activate`.
 
+Install dependencies inside the venv by running `pip install -r requirements.txt`
+
 Deactivate when you're done, using just `deactivate`.
 
 ## Built With
