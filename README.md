@@ -5,20 +5,30 @@
 
 ## Getting Started
 
-Clone the repository and start your own branch:
+#### Clone the repository and start your own branch:
+
 `git clone https://github.com/wizmariefa/simple-santa`
+
 `git checkout -b my-dev-branch`
+
 `cd simple-santa`
 
-Install virtualenv and create a venv for development:
-`pip3 install virtualenv`
-Then,
+
+#### Install virtualenv and create a venv for development:
+
+`pip3 install virtualenv` Then,
+
 Create the venv: `virtualenv -p python3 .` then,
+
 Activate/start the venv: `source bin/activate`.
 
-Install dependencies inside the venv by running `pip install -r requirements.txt`
 
-Deactivate when you're done, using just `deactivate`.
+#### Install dependencies inside the venv by running:
+`pip install -r requirements.txt`
+
+
+#### Deactivate when you're done:
+This uses just the command `deactivate`.
 
 ## Built With
 
