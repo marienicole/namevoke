@@ -1,0 +1,20 @@
+body {
+  background: #929767;
+}
+
+#imageheader {
+  margin: auto;
+  text-align: center;
+}
+#container {
+  width: 70%;
+  margin: auto;
+  top: 20px;
+}
+
+#main {
+  width: 95%;
+  height: 100%;
+  background: #EBD592;
+  color: #000000;
+}

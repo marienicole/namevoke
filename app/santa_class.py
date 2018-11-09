@@ -1,14 +1,9 @@
-from flask import Flask
-'''
-Flask or Django?
-'''
 import random, argparse
 
 class SantaGenerator:
     def __init__(self, namefile):
         self.names = self.read_input_file(namefile)
-        self.assignments = self.assign_recipient(self.names)
-        print(self.assignments)
+        self.assignments = self.assign_recipient(self.names) 
 
     def read_input_file(self, filename):
         return [line.rstrip('\n') for line in open(filename)]
