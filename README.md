@@ -1,7 +1,7 @@
 # Simple Santa
 
-[Simple Santa](http://www.simple-santa.com): A webapp to make your secret santa names more... secret, and with less work on your part!
-![santa hat](https://raw.githubusercontent.com/wizmariefa/simple-santa/master/images/santahat_no_dec.gif)
+[Simple Santa](http://www.simple-santa.com): A webapp to make your secret santa names more... secret, so everyone can participate!
+![santa hat](https://raw.githubusercontent.com/wizmariefa/simple-santa/master/app/static/images/santahat_no_dec.gif)
 
 ## Getting Started
 
