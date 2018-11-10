@@ -1,7 +1,7 @@
 from app import app
 from flask import render_template, flash, redirect
 from .santa_class import SantaGenerator
-from app.forms import ContactForm
+from app.forms import ContactForm, SendForm
 
 @app.route('/', methods=['get', 'post'])
 @app.route('/index', methods=['get', 'post'])
@@ -18,4 +18,5 @@ def index():
 
 @app.route('/santa', methods=['get', 'post'])
 def santa():
-    return render_template('santa.html', namelist=SantaGenerator(names, contact_info).get_assigned())
+    form = SendForm()
+    return render_template('santa.html', namelist=SantaGenerator(names, contact_info).get_assigned(), form=form)

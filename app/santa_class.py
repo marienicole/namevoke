@@ -4,14 +4,17 @@ class SantaGenerator:
     def __init__(self, names, contact_info):
         self.names = names.split(",")
         self.assignments = self.assign_recipient(self.names)
-
+        self.contact_info = contact_info.split(",")
+        print(contact_info)
     def read_input_file(self, filename):
         return [line.rstrip('\n') for line in open(filename)]
 
 
     def assign_recipient(self, names):
-        if len(names) in [0, 1]:
-            return names
+        if len(names) == 0:
+            return { 0:0 }
+        elif len(names) == 1:
+            return {names[0]:names[0]}
 
         assignees = dict.fromkeys(names, None)
         for name in names:

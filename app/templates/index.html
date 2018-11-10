@@ -11,9 +11,9 @@
 <body>
   <div id="container">
     <div id="imageheader">
-      <img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt="santa hat"></img>
-      <img src="{{url_for('static', filename='images/simplesanta-title.png')}}" alt='simple secret santa'></img>
-      <img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt="santa hat"></img>
+      <img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt="santa hat" width=88px height=73px></img>
+      <img src="{{url_for('static', filename='images/simplesanta-title.png')}}" alt='simple secret santa title' width=313px height=88px></img>
+      <img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt="santa hat" width=88px height=73px></img>
     </div>
     <div id='main'>
       <br><br>
@@ -27,12 +27,20 @@
           <p>
             {{ form.names.label }}<br>
             {{ form.names(rows='5', cols='40') }}
+            <br>
+            {% for error in form.names.errors %}
+              <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
           </p>
         </div>
         <div id="inputcontainer">
           <p>
             {{ form.contact_info.label }}<br>
             {{ form.contact_info(rows='5', cols='40') }}
+            <br>
+            {% for error in form.contact_info.errors %}
+              <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
           </p>
         </div>
         <p>{{ form.submit() }}</p>

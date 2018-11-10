@@ -13,22 +13,12 @@
     <div id="imageheader">
       <img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt="santa hat" width=88px height=73px></img>
       <img src="{{url_for('static', filename='images/simplesanta-title.png')}}" alt='simple secret santa title' width=313px height=88px></img>
-      <img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt="santa hat" width=88px height=73px></img>
+      <img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt="santa hat" width=88px height=73px>></img>
     </div>
     <div id='main'>
-      <form action="" method="post" novalidate>
-        <p>
-          {{ form.text() }} {{ form.text.label() }}
-        </p>
-        <p>
-          {{ form.email() }} {{ form.email.label() }}
-        </p>
-        <p>{{ form.submit() }}</p>
-        </form>
       {% for person in namelist %}
         <b>{{ person }}</b> is assigned to gift to <b>{{namelist.get(person)}}</b> <br><br>
       {% endfor %}
-
 
     </div>
   </div>
