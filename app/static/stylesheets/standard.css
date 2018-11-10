@@ -1,5 +1,7 @@
 body {
-  background: #929767;
+  background-image: url(../images/ugly-sweater.png);
+  overflow-x: none;
+  overflow-y: none;
 }
 
 #imageheader {
@@ -7,21 +9,22 @@ body {
   text-align: center;
 }
 
-#inputfield {
-  width: 45%;
+#container {
+  width: 55%;
+  height: 60%;
+  padding: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #EBD592;
+  margin: auto;
+  position: absolute;
+}
+#inputcontainer {
   display: inline-block;
   margin: auto;
 }
-
-#container {
-  width: 70%;
-  margin: auto;
-  top: 20px;
-}
-
 #main {
-  width: 95%;
-  height: 100%;
-  background: #EBD592;
+  text-align: center;
   color: #000000;
 }

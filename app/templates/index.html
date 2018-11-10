@@ -6,32 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='stylesheets/standard.css')}}">
-  <!--<link rel="stylesheet" type="text/css" href="../static/stylesheets/standard.css">-->
 </head>
 
 <body>
   <div id="container">
     <div id="imageheader">
-      <img src = "{{url_for('static', filename='images/simplesanta-title.png')}}" alt = 'simple secret santa'></img><img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt = "santa hat"></img>
-      <!--<img src="../static/images/simplesanta-title.png"></img><img src="../static/images/santahat_snowflakes.gif"></img>-->
+      <img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt="santa hat"></img>
+      <img src="{{url_for('static', filename='images/simplesanta-title.png')}}" alt='simple secret santa'></img>
+      <img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt="santa hat"></img>
     </div>
     <div id='main'>
-        {{ namelist }}
-        <div id='inputfield'>
-          {% block content %}
-          <form action="" method="POST" novalidate>
-            {{ form.hidden_tag() }}
-            <p>
-              {{ form.names.label }}<br>
-              {{ form.names(size=32) }}
-            </p><p>
-              {{ form.contact_info.label }}<br>
-              {{ form.contact_info(size=32) }}
-            </p>
-            <p>{{ form.submit() }}</p>
-          </form>
-          {% endblock %}
+      <br><br>
+      Input the names and phone numbers of your participants in the same order. <br>
+      If Tom is the first in the list, his number comes first. Anna is second, so Anna's number comes second, etc.<br><br>
+      Please input information with commas separating entries-- a comma between Tom's name and Anna's name. <br>
+      {% block content %}
+      <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <div id="inputcontainer">
+          <p>
+            {{ form.names.label }}<br>
+            {{ form.names(rows='5', cols='40') }}
+          </p>
         </div>
+        <div id="inputcontainer">
+          <p>
+            {{ form.contact_info.label }}<br>
+            {{ form.contact_info(rows='5', cols='40') }}
+          </p>
+        </div>
+        <p>{{ form.submit() }}</p>
+      </form>
+      {% endblock %}
     </div>
   </div>
 </body>

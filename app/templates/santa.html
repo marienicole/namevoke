@@ -1,25 +1,22 @@
 <html>
 
 <head>
-  <title>Simple Secret Santa Generator</title>
+  <title>SSS: Results!</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='stylesheets/standard.css')}}">
-  <!--<link rel="stylesheet" type="text/css" href="../static/stylesheets/standard.css">-->
 </head>
 
 <body>
   <div id="container">
     <div id="imageheader">
-      <img src = "{{url_for('static', filename='images/simplesanta-title.png')}}" alt = 'simple secret santa'></img><img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt = "santa hat"></img>
-      <!--<img src="../static/images/simplesanta-title.png"></img><img src="../static/images/santahat_snowflakes.gif"></img>-->
+      <img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt="santa hat"></img>
+      <img src="{{url_for('static', filename='images/simplesanta-title.png')}}" alt='simple secret santa'></img>
+      <img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt="santa hat"></img>
     </div>
     <div id='main'>
-        {{ namelist }}
-        <div id='inputfield'>
-          heloopppppsdfd
-        </div>
+      {{ namelist }}
     </div>
   </div>
 </body>
