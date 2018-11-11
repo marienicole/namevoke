@@ -1,5 +1,6 @@
 body {
-  background-image: url(../images/ugly-sweater.png);
+  background-image: url(../images/ugly-sweater2.png);
+  font-family: 'Open Sans', sans-serif;
   overflow-x: none;
   overflow-y: none;
 }
@@ -19,7 +20,7 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #EBD592;
+  background: #4b692f;
   margin: auto;
   position: absolute;
 }
