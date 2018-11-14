@@ -1,53 +1,33 @@
-<html>
+{% extends "general.html" %}
+{% block title %}Welcome!{% endblock %}
+{%block content %}
 
-<head>
-  <title>Simple Secret Santa Generator</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='stylesheets/standard.css')}}">
-</head>
+Input the names and phone numbers of your participants in the same order. <br>
+If Tom is the first in the list, his number comes first. Anna is second, so Anna's number comes second, etc.<br><br>
+Please input information with commas separating entries-- a comma between Tom's name and Anna's name. <br>
 
-<body>
-  <div id="container">
-    <div id="imageheader">
-      <img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt="santa hat" width=88px height=73px></img>
-      <img src="{{url_for('static', filename='images/ssstitle.png')}}" alt='simple secret santa title'></img>
-      <img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt="santa hat" width=88px height=73px></img>
-    </div>
-    <div id='main'>
-      <br><br>
-      Input the names and phone numbers of your participants in the same order. <br>
-      If Tom is the first in the list, his number comes first. Anna is second, so Anna's number comes second, etc.<br><br>
-      Please input information with commas separating entries-- a comma between Tom's name and Anna's name. <br>
-      {% block content %}
-      <form action="" method="post" novalidate>
-        {{ form.hidden_tag() }}
-        <div id="inputcontainer">
-          <p>
-            {{ form.names.label }}<br>
-            {{ form.names(rows='5', cols='40') }}
-            <br>
-            {% for error in form.names.errors %}
-              <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-          </p>
-        </div>
-        <div id="inputcontainer">
-          <p>
-            {{ form.contact_info.label }}<br>
-            {{ form.contact_info(rows='5', cols='40') }}
-            <br>
-            {% for error in form.contact_info.errors %}
-              <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-          </p>
-        </div>
-        <p>{{ form.submit() }}</p>
-      </form>
-      {% endblock %}
-    </div>
+<form action="" method="post" novalidate>
+  {{ form.hidden_tag() }}
+  <div id="inputcontainer">
+    <p>
+      {{ form.names.label }}<br>
+      {{ form.names(rows='5', cols='40') }}
+      <br>
+      {% for error in form.names.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
   </div>
-</body>
-
-</html>
+  <div id="inputcontainer">
+    <p>
+      {{ form.contact_info.label }}<br>
+      {{ form.contact_info(rows='5', cols='40') }}
+      <br>
+      {% for error in form.contact_info.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+  </div>
+  <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
