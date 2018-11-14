@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, TextAreaField, BooleanField
+from wtforms import StringField, SubmitField, TextAreaField, BooleanField, validators
 from wtforms.validators import DataRequired
 
 class ContactForm(FlaskForm):
@@ -8,6 +8,5 @@ class ContactForm(FlaskForm):
     submit = SubmitField('Generate Secret Santa!')
 
 class SendForm(FlaskForm):
-    text = BooleanField('Send Via Text')
-    email = BooleanField('Send Via Email')
+    text = BooleanField('Send Via Text', validators=[validators.AnyOf([True, False])])
     submit = SubmitField('Send em\' out!')

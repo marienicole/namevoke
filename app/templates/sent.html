@@ -1,0 +1,8 @@
+{% extends "general.html" %}
+{% block title %}Choose Method{% endblock %}
+{%block content %}
+Yay! Your Secret Santa texts have been sent!<br><br>
+{% for person in message_sender %}
+  <b>{{ person }}</b> has the number <b>{{message_sender[person]}}</b> <br>
+{% endfor %}
+{% endblock %}
