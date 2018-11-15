@@ -1,8 +1,9 @@
 body {
-  background-image: url(../images/ugly-sweater2.png);
-  font-family: 'Open Sans', sans-serif;
-  overflow-x: none;
-  overflow-y: none;
+  background-image: url(../images/ugly-sweater3.png);
+  font-family: 'Sanchez', serif;
+  font-size: 18;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 img {
@@ -15,14 +16,18 @@ img {
 }
 
 #container {
+  border: 3px solid #ffffff;
   width: 55%;
-  padding: 5px;
+  height: 100%;
+  padding: 10px;
+  padding-top: 20px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #4b692f;
+  background: #7f946b;
   margin: auto;
   position: absolute;
+  overflow: auto;
 }
 
 #inputcontainer {

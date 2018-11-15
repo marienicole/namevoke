@@ -1,33 +1,18 @@
 {% extends "general.html" %}
 {% block title %}Welcome!{% endblock %}
 {%block content %}
-
-Input the names and phone numbers of your participants in the same order. <br>
-If Tom is the first in the list, his number comes first. Anna is second, so Anna's number comes second, etc.<br><br>
-Please input information with commas separating entries-- a comma between Tom's name and Anna's name. <br>
+Input the number of people participating in your secret santa.<br>
 
 <form action="" method="post" novalidate>
   {{ form.hidden_tag() }}
-  <div id="inputcontainer">
     <p>
-      {{ form.names.label }}<br>
-      {{ form.names(rows='5', cols='40') }}
+      {{ form.num_people.label }}<br>
+      {{ form.num_people() }}
       <br>
-      {% for error in form.names.errors %}
+      {% for error in form.num_people.errors %}
       <span style="color: red;">[{{ error }}]</span>
       {% endfor %}
     </p>
-  </div>
-  <div id="inputcontainer">
-    <p>
-      {{ form.contact_info.label }}<br>
-      {{ form.contact_info(rows='5', cols='40') }}
-      <br>
-      {% for error in form.contact_info.errors %}
-      <span style="color: red;">[{{ error }}]</span>
-      {% endfor %}
-    </p>
-  </div>
   <p>{{ form.submit() }}</p>
 </form>
 {% endblock %}

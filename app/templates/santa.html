@@ -1,8 +1,32 @@
 {% extends "general.html" %}
 {% block title %}Choose Method{% endblock %}
 {%block content %}
-If you don't check the 'text' box, then you will be redirected to a page with the names and assignments.<br>
+Input the names and phone numbers of your participants in the same order. <br>
+If Tom is the first in the list, his number comes first. Anna is second, so Anna's number comes second, etc.<br><br>
+Please input information with commas separating entries-- a comma between Tom's name and Anna's name. <br><br>
+<b>If you don't check the 'text' box, then you will be redirected to a page with the names and assignments.</b><br>
 <form action="" method="post" novalidate>
+  {{ form.hidden_tag() }}
+  <div id="inputcontainer">
+    <h2>Names of Participants</h2>
+    <p>
+      {{ form.names() }}
+      <br>
+      {% for error in form.names.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+  </div>
+  <div id="inputcontainer">
+    <h2> Phone Numbers of Participants </h2>
+    <p>
+      {{ form.contact_info() }}
+      <br>
+      {% for error in form.contact_info.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+  </div>
   <p>
     {{ form.text() }} {{ form.text.label() }}
   </p>
