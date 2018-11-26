@@ -1,12 +1,18 @@
+import os
 from app import app
 from flask import render_template, flash, redirect
 from .santa_class import SantaGenerator
-from app.forms import ContactForm, NumParticipantsForm
+from .forms import NumParticipantsForm, FormView
 from .message_sender import MessageSender
+########################################################
+
 global names
 global contact_info
 global sg
 global ms
+os.environ["NUM_PPL"] = "2"
+
+########################################################
 
 @app.route('/', methods=['get', 'post'])
 @app.route('/index', methods=['get', 'post'])
@@ -15,19 +21,19 @@ def index():
     ppl_form = NumParticipantsForm()
     if ppl_form.validate_on_submit():
         flash("Generating page for {} participants".format(ppl_form.num_people.data))
-        num_ppl = ppl_form.num_people.data
+        os.environ["NUM_PPL"] = str(ppl_form.num_people.data)
         return redirect('/santa')
     return render_template('index.html', form=ppl_form)
 
 
 @app.route('/santa', methods=['get', 'post'])
 def santa():
+    from .forms import ContactForm
     global names
     global contact_info
     global sg
-    global num_ppl
 
-    contact_form = ContactForm()
+    contact_form = FormView()
 
     if contact_form.is_submitted():
         flash('Santa-list generated for {}, with contact {}'.format(contact_form.names.data,
@@ -62,4 +68,5 @@ def sent():
     global ms
     global contact_info
     ms = MessageSender(sg.get_names(), contact_info)
-    return render_template('sent.html', message_sender = ms.send_texts())
+    return render_template('sent.html', message_sender = ms.send_texts(sg.get_assigned()))
+########################################################

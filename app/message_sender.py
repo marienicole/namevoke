@@ -7,7 +7,7 @@ class MessageSender:
         print(num_str)
         num_list = self.separate_numbers(num_str)
         self.valid_nums = self.validate_numbers(num_list)
-        self.user_dict = self.make_dict(names, self.valid_nums)
+        self.user_dict = self.make_dict(names, self.valid_nums) #{user: number}
 
     def make_dict(self, names, numbers):
         users = {}
@@ -26,11 +26,17 @@ class MessageSender:
         validated_nums = []
         for number in numbers:
             if not num_regex.match(number):
-                validated_nums.append('INVLAID')
+                validated_nums.append('INVALID')
             else:
                 validated_nums.append(number)
 
         return validated_nums
 
-    def send_texts(self):
-        return self.user_dict
+    def send_texts(self, assignments):
+        sns = boto3.client('sns')
+        i = 0
+        for user in self.user_dict:
+            my_assgn = assignments[user]
+            message = "You (%s) are assigned to gift to: %s!" %(user, my_assn)
+            sns.publish(PhoneNumber = self.user_dict[user], Message=message)
+        return("Messages sent successfully!")

@@ -1,6 +1,13 @@
 {% extends "general.html" %}
+{% import "forms.html" as forms %}
 {% block title %}Choose Method{% endblock %}
-{%block content %}
+
+
+{% block content %}
+{{ forms.render(form) }}
+{% endblock %}
+
+<!-- {%block content %}
 Input the names and phone numbers of your participants in the same order. <br>
 If Tom is the first in the list, his number comes first. Anna is second, so Anna's number comes second, etc.<br><br>
 Please input information with commas separating entries-- a comma between Tom's name and Anna's name. <br><br>
@@ -32,4 +39,4 @@ Please input information with commas separating entries-- a comma between Tom's 
   </p>
   <p>{{ form.submit() }}</p>
 </form>
-{% endblock %}
+{% endblock %} -->
