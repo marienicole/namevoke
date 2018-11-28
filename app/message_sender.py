@@ -34,7 +34,7 @@ class MessageSender:
         return validated_nums
 
     def send_texts(self, assignments):
-        sns = boto3.client('sns', region="us-east-1")
+        sns = boto3.client('sns', region_name="us-east-1")
         i = 0
         for user in self.user_dict:
             my_assgn = assignments[user]
