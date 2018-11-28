@@ -1,13 +1,16 @@
 import random, argparse, boto3
 
 class SantaGenerator:
-    def __init__(self, names, ):
-        self.names = names.split(",")
+    def __init__(self, names):
+        self.names = []
+        for name in names:
+            if name['name_entry'] is not None:
+                self.names.append(name['name_entry'])
         self.assignments = self.assign_recipient(self.names)
 
     def get_names(self):
         return self.names
-        
+
     def read_input_file(self, filename):
         return [line.rstrip('\n') for line in open(filename)]
 

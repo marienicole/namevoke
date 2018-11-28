@@ -3,6 +3,7 @@
 {%block content %}
 Yay! Your Secret Santa texts have been sent!<br><br>
 {% for person in message_sender %}
-  <b>{{ person }}</b> has the number <b>{{message_sender[person]}}</b> <br>
+  <b>{{ person }}'s</b> assignment was sent to <b>{{message_sender[person]}}</b> <br>
+We hope you have fun, and thanks for using our Secret Santa!
 {% endfor %}
 {% endblock %}

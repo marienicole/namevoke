@@ -33,6 +33,8 @@ img {
 #inputcontainer {
   display: inline-block;
   margin: auto;
+  width: 33%;
+  text-align: center;
 }
 
 #main {

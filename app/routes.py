@@ -2,7 +2,7 @@ import os
 from app import app
 from flask import render_template, flash, redirect
 from .santa_class import SantaGenerator
-from .forms import NumParticipantsForm, FormView
+from .forms import NumParticipantsForm, ContactForm
 from .message_sender import MessageSender
 ########################################################
 
@@ -10,7 +10,6 @@ global names
 global contact_info
 global sg
 global ms
-os.environ["NUM_PPL"] = "2"
 
 ########################################################
 
@@ -21,19 +20,22 @@ def index():
     ppl_form = NumParticipantsForm()
     if ppl_form.validate_on_submit():
         flash("Generating page for {} participants".format(ppl_form.num_people.data))
-        os.environ["NUM_PPL"] = str(ppl_form.num_people.data)
+        num_ppl = str(ppl_form.num_people.data)
         return redirect('/santa')
     return render_template('index.html', form=ppl_form)
 
 
 @app.route('/santa', methods=['get', 'post'])
 def santa():
-    from .forms import ContactForm
     global names
     global contact_info
     global sg
+    global num_ppl
 
-    contact_form = FormView()
+    contact_form = ContactForm()
+    for i in range(int(num_ppl)-1):
+        contact_form.names.append_entry()
+        contact_form.contact_info.append_entry()
 
     if contact_form.is_submitted():
         flash('Santa-list generated for {}, with contact {}'.format(contact_form.names.data,
@@ -41,8 +43,9 @@ def santa():
         names = contact_form.names.data
         contact_info = contact_form.contact_info.data
 
-        print(names)
-        print(contact_info)
+        #print(names) # names is a list of dictionaries {name_entry: name, csrf_token: csrf}
+        #print(contact_info) # dict of {'phone_number': Phonenumber(country_code = 1, national_number = x)}
+
         flash('Sending via text?'.format(contact_form.text.data))
         am_i_texting = contact_form.text.data
 

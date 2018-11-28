@@ -1,0 +1,46 @@
+{
+  [{
+    'name_entry': 'Marie',
+    'csrf_token': 'ImM5ZTA1ZWU5MTk0ZDU3MGUzYzk2MjMyNGJmYWI2MzYyOWZlNTliY2Mi.W_7V5Q.YMGm21c3Q2QHQ-UL8DHrNr4EBik'
+  }, {
+    'name_entry': 'Carie',
+    'csrf_token': 'ImM5ZTA1ZWU5MTk0ZDU3MGUzYzk2MjMyNGJmYWI2MzYyOWZlNTliY2Mi.W_7V5Q.YMGm21c3Q2QHQ-UL8DHrNr4EBik'
+  }, {
+    'name_entry': 'CJ',
+    'csrf_token': 'ImM5ZTA1ZWU5MTk0ZDU3MGUzYzk2MjMyNGJmYWI2MzYyOWZlNTliY2Mi.W_7V5Q.YMGm21c3Q2QHQ-UL8DHrNr4EBik'
+  }, {
+    'name_entry': 'Trent',
+    'csrf_token': 'ImM5ZTA1ZWU5MTk0ZDU3MGUzYzk2MjMyNGJmYWI2MzYyOWZlNTliY2Mi.W_7V5Q.YMGm21c3Q2QHQ-UL8DHrNr4EBik'
+  }, {
+    'name_entry': None,
+    'csrf_token': None
+  }, {
+    'name_entry': None,
+    'csrf_token': None
+  }, {
+    'name_entry': None,
+    'csrf_token': None
+  }]
+  [{
+    'phone_number': PhoneNumber(country_code = 1, national_number = 1234567891, extension = None, italian_leading_zero = None, number_of_leading_zeros = None, country_code_source = 0, preferred_domestic_carrier_code = None),
+    'csrf_token': 'ImM5ZTA1ZWU5MTk0ZDU3MGUzYzk2MjMyNGJmYWI2MzYyOWZlNTliY2Mi.W_7V5Q.YMGm21c3Q2QHQ-UL8DHrNr4EBik'
+  }, {
+    'phone_number': PhoneNumber(country_code = 1, national_number = 1123456789, extension = None, italian_leading_zero = None, number_of_leading_zeros = None, country_code_source = 0, preferred_domestic_carrier_code = None),
+    'csrf_token': 'ImM5ZTA1ZWU5MTk0ZDU3MGUzYzk2MjMyNGJmYWI2MzYyOWZlNTliY2Mi.W_7V5Q.YMGm21c3Q2QHQ-UL8DHrNr4EBik'
+  }, {
+    'phone_number': PhoneNumber(country_code = 1, national_number = 1234567891, extension = None, italian_leading_zero = None, number_of_leading_zeros = None, country_code_source = 0, preferred_domestic_carrier_code = None),
+    'csrf_token': 'ImM5ZTA1ZWU5MTk0ZDU3MGUzYzk2MjMyNGJmYWI2MzYyOWZlNTliY2Mi.W_7V5Q.YMGm21c3Q2QHQ-UL8DHrNr4EBik'
+  }, {
+    'phone_number': PhoneNumber(country_code = 1, national_number = 1234567891, extension = None, italian_leading_zero = None, number_of_leading_zeros = None, country_code_source = 0, preferred_domestic_carrier_code = None),
+    'csrf_token': 'ImM5ZTA1ZWU5MTk0ZDU3MGUzYzk2MjMyNGJmYWI2MzYyOWZlNTliY2Mi.W_7V5Q.YMGm21c3Q2QHQ-UL8DHrNr4EBik'
+  }, {
+    'phone_number': None,
+    'csrf_token': None
+  }, {
+    'phone_number': None,
+    'csrf_token': None
+  }, {
+    'phone_number': None,
+    'csrf_token': None
+  }]
+}
