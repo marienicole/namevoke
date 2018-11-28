@@ -29,7 +29,6 @@ class MessageSender:
                 validated_nums.append('INVALID')
             else:
                 number_fixed = number.replace("(", "").replace(")", "").replace(" ", "-").replace(".", "")
-                print(number_fixed)
                 validated_nums.append(number_fixed)
 
         return validated_nums
@@ -40,7 +39,6 @@ class MessageSender:
         for user in self.user_dict:
             my_assgn = assignments[user]
             message = "You (%s) are assigned to gift to: %s!" %(user, my_assgn)
-            print(message)
             my_number = "+1" + self.user_dict[user]
-            sns.publish(PhoneNumber = self.user_dict[user], Message=message)
+            sns.publish(PhoneNumber = my_number, Message=message)
         return self.user_dict

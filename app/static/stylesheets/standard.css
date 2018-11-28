@@ -3,7 +3,12 @@ body {
   font-family: 'Sanchez', serif;
   font-size: 18;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
 }
 
 img {
@@ -16,9 +21,10 @@ img {
 }
 
 #container {
+  text-align: center;
   border: 3px solid #ffffff;
   width: 55%;
-  height: 100%;
+  height: 95%;
   padding: 10px;
   padding-top: 20px;
   top: 50%;
@@ -26,8 +32,22 @@ img {
   transform: translate(-50%, -50%);
   background: #7f946b;
   margin: auto;
-  position: absolute;
-  overflow: auto;
+  position: fixed;
+  overflow-y: scroll;
+}
+
+#textbody {
+  width: 100%;
+  height: 78%;
+  overflow-y: auto;
+  text-align: center;
+}
+
+#footer {
+  bottom: 0;
+  position: relative;
+  width: 99%;
+  text-align: center;
 }
 
 #inputcontainer {
@@ -35,9 +55,4 @@ img {
   margin: auto;
   width: 33%;
   text-align: center;
-}
-
-#main {
-  text-align: center;
-  color: #000000;
 }

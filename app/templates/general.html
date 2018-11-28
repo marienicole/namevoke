@@ -11,14 +11,17 @@
 
 <body>
   <div id="container">
-    <div id="imageheader">
+      <div id="imageheader">
       <img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt="santa hat" width=88px height=73px></img>
       <img src="{{url_for('static', filename='images/ssstitle.png')}}" alt='simple secret santa title'></img>
       <img src="{{url_for('static', filename='images/santahat_snowflakes.gif')}}" alt="santa hat" width=88px height=73px></img>
     </div>
-    <div id='main'>
-      <br><br>
+    <br>
+    <div id='textbody'>
       {% block content %}{% endblock %}
+    </div>
+    <div id='footer'>
+      Thank you for visiting! Please check my source code out on <a href="https://github.com/wizmariefa/simple-santa">Github.</a>
     </div>
   </div>
 </body>

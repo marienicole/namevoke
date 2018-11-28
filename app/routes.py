@@ -43,9 +43,6 @@ def santa():
         names = contact_form.names.data
         contact_info = contact_form.contact_info.data
 
-        #print(names) # names is a list of dictionaries {name_entry: name, csrf_token: csrf}
-        #print(contact_info) # dict of {'phone_number': Phonenumber(country_code = 1, national_number = x)}
-
         flash('Sending via text?'.format(contact_form.text.data))
         am_i_texting = contact_form.text.data
 
