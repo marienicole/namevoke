@@ -2,8 +2,7 @@ import os
 from flask.views import MethodView
 from flask_wtf import FlaskForm
 from wtforms import IntegerField, StringField, SubmitField, BooleanField, validators
-from wtforms import FieldList
-from wtforms import FormField
+from wtforms import FieldList, FormField
 from wtforms_alchemy import PhoneNumberField
 from wtforms.validators import DataRequired
 

@@ -1,9 +1,8 @@
 import os
-from secretsanta import app
+from application import application
 from flask import render_template, flash, redirect
-from .santa_class import SantaGenerator
-from .forms import NumParticipantsForm, ContactForm
-from .message_sender import MessageSender
+from santa_class import SantaGenerator, MessageSender
+from forms import NumParticipantsForm, ContactForm
 ########################################################
 
 global names
@@ -13,8 +12,8 @@ global ms
 
 ########################################################
 
-@app.route('/', methods=['get', 'post'])
-@app.route('/index', methods=['get', 'post'])
+@application.route('/', methods=['get', 'post'])
+@application.route('/index', methods=['get', 'post'])
 def index():
     global num_ppl
     ppl_form = NumParticipantsForm()
@@ -25,7 +24,7 @@ def index():
     return render_template('index.html', form=ppl_form)
 
 
-@app.route('/santa', methods=['get', 'post'])
+@application.route('/santa', methods=['get', 'post'])
 def santa():
     global names
     global contact_info
@@ -56,13 +55,13 @@ def santa():
     return render_template('santa.html', form=contact_form)
 
 
-@app.route('/assignments')
+@application.route('/assignments')
 def assignments():
     global sg
     return render_template('choice.html', namelist=sg.get_assigned())
 
 
-@app.route('/sent')
+@application.route('/sent')
 def sent():
     global sg
     global ms
