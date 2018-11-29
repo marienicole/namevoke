@@ -1,6 +1,6 @@
 from flask import Flask
 
-secretsanta = Flask(__name__)
-secretsanta.config['SECRET_KEY'] = 'any secret string'
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'any secret string'
 
 from secretsanta import routes

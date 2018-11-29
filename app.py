@@ -1,3 +1,3 @@
-from secretsanta import secretsanta
+from secretsanta import app
 
-secretsanta.run(threaded=True)
+app.run(threaded=True)
