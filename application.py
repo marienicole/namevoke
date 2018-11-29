@@ -27,8 +27,8 @@ def santa():
 
     contact_form = ContactForm()
     for i in range(int(num_ppl)-1):
-        contact_form.names.applicationend_entry()
-        contact_form.contact_info.applicationend_entry()
+        contact_form.names.append_entry()
+        contact_form.contact_info.append_entry()
 
     if contact_form.is_submitted():
         flash('Santa-list generated for {}, with contact {}'.format(contact_form.names.data,
