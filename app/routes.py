@@ -1,5 +1,5 @@
 import os
-from secretsanta import app
+from app import app
 from flask import render_template, flash, redirect
 from .santa_class import SantaGenerator
 from .forms import NumParticipantsForm, ContactForm
