@@ -3,11 +3,11 @@ from simplesanta.santa_class import SantaGenerator
 from simplesanta.forms import NumParticipantsForm, ContactForm
 from simplesanta.message_sender import MessageSender
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'any secret string'
+application = Flask(__name__)
+application.config['SECRET_KEY'] = 'any secret string'
 
-@app.route('/', methods=['get', 'post'])
-@app.route('/index', methods=['get', 'post'])
+@application.route('/', methods=['get', 'post'])
+@application.route('/index', methods=['get', 'post'])
 def index():
     global num_ppl
     ppl_form = NumParticipantsForm()
@@ -18,7 +18,7 @@ def index():
     return render_template('index.html', form=ppl_form)
 
 
-@app.route('/santa', methods=['get', 'post'])
+@application.route('/santa', methods=['get', 'post'])
 def santa():
     global names
     global contact_info
@@ -27,8 +27,8 @@ def santa():
 
     contact_form = ContactForm()
     for i in range(int(num_ppl)-1):
-        contact_form.names.append_entry()
-        contact_form.contact_info.append_entry()
+        contact_form.names.applicationend_entry()
+        contact_form.contact_info.applicationend_entry()
 
     if contact_form.is_submitted():
         flash('Santa-list generated for {}, with contact {}'.format(contact_form.names.data,
@@ -49,13 +49,13 @@ def santa():
     return render_template('santa.html', form=contact_form)
 
 
-@app.route('/assignments')
+@application.route('/assignments')
 def assignments():
     global sg
     return render_template('choice.html', namelist=sg.get_assigned())
 
 
-@app.route('/sent')
+@application.route('/sent')
 def sent():
     global sg
     global ms
@@ -64,4 +64,4 @@ def sent():
     return render_template('sent.html', message_sender = ms.send_texts(sg.get_assigned()))
 
 if __name__ == "__main__":
-    app.run(threaded=True)
+    application.run(threaded=True)
