@@ -1,0 +1,58 @@
+body {
+  background-image: url(../images/ugly-sweater3.png);
+  font-family: 'Sanchez', serif;
+  font-size: 18;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+img {
+  image-rendering: crisp-edges;
+}
+
+#imageheader {
+  margin: auto;
+  text-align: center;
+}
+
+#container {
+  text-align: center;
+  border: 3px solid #ffffff;
+  width: 55%;
+  height: 95%;
+  padding: 10px;
+  padding-top: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #7f946b;
+  margin: auto;
+  position: fixed;
+  overflow-y: scroll;
+}
+
+#textbody {
+  width: 100%;
+  height: 78%;
+  overflow-y: auto;
+  text-align: center;
+}
+
+#footer {
+  bottom: 0;
+  position: relative;
+  width: 99%;
+  text-align: center;
+}
+
+#inputcontainer {
+  display: inline-block;
+  margin: auto;
+  width: 33%;
+  text-align: center;
+}

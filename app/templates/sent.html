@@ -1,9 +1,0 @@
-{% extends "general.html" %}
-{% block title %}Choose Method{% endblock %}
-{%block content %}
-Yay! Your Secret Santa texts have been sent!<br><br>
-{% for person in message_sender %}
-  <b>{{ person }}'s</b> assignment was sent to <b>{{message_sender[person]}}</b> <br>
-{% endfor %}
-<br>We hope you have fun, and thanks for using our Secret Santa!
-{% endblock %}

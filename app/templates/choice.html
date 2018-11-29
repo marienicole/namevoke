@@ -1,9 +1,0 @@
-{% extends "general.html" %}
-{% block title %}Results!{% endblock %}
-{%block content %}
-
-  {% for person in namelist %}
-    <b>{{ person }}</b> is assigned to gift to <b>{{namelist.get(person)}}</b> <br><br>
-  {% endfor %}
-
-{% endblock %}

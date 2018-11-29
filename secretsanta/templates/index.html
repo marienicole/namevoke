@@ -1,0 +1,22 @@
+{% extends "general.html" %}
+{% block title %}Welcome!{% endblock %}
+{%block content %}
+Welcome to Simple Secret Santa-- designed to make sure nobody knows who has who in Secret Santa!<br>
+Sadly, this app is only compatible with US numbers (for now)-- sorry, international users!<br><br>
+Once you enter your user's name/numbers, you will be able to either send out assignments via text, or
+be taken to a page with the assignments that you can disseminate yourself.<br>
+
+Please enter the number of participants.
+<form action="" method="post" novalidate>
+  {{ form.hidden_tag() }}
+    <p>
+      {{ form.num_people.label }}<br>
+      {{ form.num_people() }}
+      <br>
+      {% for error in form.num_people.errors %}
+      <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+  <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
